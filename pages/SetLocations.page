@@ -1,19 +1,20 @@
-<apex:page StandardController="Opportunity" extensions="wrapperClassController">
+<apex:page StandardController="Opportunity" extensions="wrapperClassController" title="Set Locations">
     <apex:form id="createServices">
-    <apex:pageBlock >
+    <apex:pageBlock title="Set Locations">
         <apex:pageBlockButtons >
             <apex:commandButton value="Add Locations" action="{!processSelected}" rerender="table"/>
         </apex:pageBlockButtons>
-        <apex:pageBlockTable value="{!locations}" var="o">
+        <apex:pageBlockTable value="{!Locations}" var="o">
                <apex:column >
                     <!-- This is our selected Boolean property in our wrapper class -->
                     <apex:inputCheckbox value="{!o.selected}"/>
                 </apex:column>
-               <apex:column value="{!o.loc.Name}"/>
-               <apex:column value="{!o.loc.Street_Address__c}"/>
-               <apex:column value="{!o.loc.City__c}"/>
-               <apex:column value="{!o.loc.State__c}"/>
-               <apex:column value="{!o.loc.Postal_Code__c}"/>
+                    <apex:column value="{!o.loc.Name}"/>
+                    <apex:column value="{!o.loc.BillingStreet}"/>
+                    <apex:column value="{!o.loc.BillingCity}"/>
+                    <apex:column value="{!o.loc.BillingState}"/>
+                    <apex:column value="{!o.loc.BillingPostalCode}"/>
+
             <apex:inputCheckbox />
         </apex:pageBlockTable>
     </apex:pageBlock>
